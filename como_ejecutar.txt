@@ -1,0 +1,11 @@
+Debido a algunas de las dependencias de este proyecto se esta trabajando con 
+----Python 3.11 ------
+
+Paso 1: crear un entorno virtual con python 3.11
+    py -3.11 -m venv venv
+
+paso 2: descargar las dependencias necesarias.
+    pip install -r requirements.txt
+
+paso 3: ejecutar el archivo main:
+    python app.py
