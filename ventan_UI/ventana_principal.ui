@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProyectoMC2</class>
+ <widget class="QMainWindow" name="ProyectoMC2">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>941</width>
+    <height>708</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>941</width>
+      <height>691</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="lbl_fondo">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>12</y>
+       <width>931</width>
+       <height>651</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../interface/img/img.qrc">:/fondo/fondo.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_cadena">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>490</y>
+       <width>311</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	border-radius: 20px;
+	color: white;
+    background-color: rgb(61, 75, 131);
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+
+}
+
+QPushButton:hover{
+    background-color: #ffd700;  /* Color dorado */
+	color:black;
+}</string>
+     </property>
+     <property name="text">
+      <string>Cadena</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_Semaforo">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>490</y>
+       <width>261</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	border-radius: 20px;
+	color: white;
+    background-color: rgb(61, 75, 131);
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+
+}
+
+QPushButton:hover{
+    background-color: #ffd700;  /* Color dorado */
+	color:black;
+}</string>
+     </property>
+     <property name="text">
+      <string>Simulacion de Semaforo</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="txt_Nombres">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>290</y>
+       <width>521</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">    background-color: rgba(0, 0, 0, 180);  /* negro con transparencia */
+    color: white;
+    font-size: 30px;
+    border: 2px solid #333;
+    border-radius: 5px;
+</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:30px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Por:&lt;br /&gt;&lt;br /&gt;*   Jorge Aniabl Martínez Letona     -  201317952 -&lt;br /&gt;*   Marlon Oved Juárez Hicho          -  202240677 -&lt;br /&gt;*   Iván Antonio Álvarez Godínez    -  202003032 -&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="txt_Informacion">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>921</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">    background-color: rgba(0, 0, 0, 0);  /* negro con transparencia */
+    color: white;
+    font-size: 30px;
+    border: 2px solid #333;
+    border-radius: 5px;
+</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:30px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Matematica para computación 2 - Seccion B -&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Ing. Alfredo González&lt;br /&gt;Aux. Eduardo René Agustín Mendoza&lt;br /&gt;                                     &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:30px; font-weight:600;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;                                                                                   Proyecto:&lt;br /&gt;                  Simulacion de un semaforo de intersección y evaluación de cadenas con redes petri&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_oscFondo">
+     <property name="geometry">
+      <rect>
+       <x>-20</x>
+       <y>-30</y>
+       <width>961</width>
+       <height>731</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">    background-color: rgba(0, 0, 0, 180);  /* negro con transparencia */</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>lbl_fondo</zorder>
+    <zorder>lbl_oscFondo</zorder>
+    <zorder>btn_cadena</zorder>
+    <zorder>btn_Semaforo</zorder>
+    <zorder>txt_Nombres</zorder>
+    <zorder>txt_Informacion</zorder>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>941</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../img/img.qrc"/>
+  <include location="../interface/img/img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

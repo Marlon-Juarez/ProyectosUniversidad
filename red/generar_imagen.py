@@ -52,8 +52,143 @@ class grafo:
         return True  # Hay más pasos
 
     def generar_red_semaforo(self):
-        # codigo red de semaforo
-        print("en proceso")
+        # Limpiar el grafo
+        self.dot.clear()
+        
+        # Lugares
+        self.dot.node('P1', shape='circle', label='luz_Verde1')
+        self.dot.node('P2', shape='circle', label='luz_Amarilla1')
+        self.dot.node('P3', shape='circle', label='<<font point-size="20">luz_Roja1<br/>●</font>>', style='filled', fillcolor='red')
+        self.dot.node('P4', shape='circle', label='espera1')
+
+        self.dot.node('P5', shape='circle', label='<<font point-size="20">luz_Verde2<br/>●</font>>', style='filled', fillcolor='green')
+        self.dot.node('P6', shape='circle', label='luz_Amarilla2')
+        self.dot.node('P7', shape='circle', label='luz_Roja2')
+        self.dot.node('P8', shape='circle', label='espera2')
+        
+  
+
+        # Transiciones
+        self.dot.node('T1', shape='box', label='T verde1 -> amarilla1, espera2')
+        self.dot.node('T2', shape='box', label='T amarilla1 -> roja1')
+        self.dot.node('T3', shape='box', label='T roja1 -> verde1')
+
+        self.dot.node('T4', shape='box', label='T verde2 -> amarilla2, espera1')
+        self.dot.node('T5', shape='box', label='T amarilla2 -> roja2')
+        self.dot.node('T6', shape='box', label='T roja2 -> verde2')
+
+
+        # Arcos
+        self.dot.edge('P1', 'T1')
+        self.dot.edge('T1', 'P2')
+        self.dot.edge('T1', 'P8')
+
+        self.dot.edge('P2', 'T2')
+        self.dot.edge('T2', 'P3')
+        self.dot.edge('P3', 'T3')
+        self.dot.edge('P4', 'T3')
+        self.dot.edge('T3', 'P1')
+
+        self.dot.edge('P5', 'T4')
+        self.dot.edge('T4', 'P6')
+        self.dot.edge('T4', 'P4')
+
+        self.dot.edge('P6', 'T5')
+        self.dot.edge('T5', 'P7')
+        self.dot.edge('P7', 'T6')
+        self.dot.edge('P8', 'T6')
+        self.dot.edge('T6', 'P5')
+
+    def generar_red_semaforo_animado(self, i):
+        # Limpiar el grafo
+        self.dot.clear()
+
+        # -------- Lugares --------
+
+        # luz_Verde1 (P1)
+        color = "green" if i == 2 else "white"
+        etiqueta = "<br/>●" if i == 2 else " "
+        self.dot.node('P1', shape='circle', label=f'<<font point-size="20">luz_Verde1{etiqueta}</font>>', style='filled', fillcolor=color)
+
+        # luz_Amarilla1 (P2)
+        color = "yellow" if i == 3 else "white"
+        etiqueta = "<br/>●" if i == 3 else " "
+        self.dot.node('P2', shape='circle', label=f'<<font point-size="20">luz_Amarilla1{etiqueta}</font>>', style='filled', fillcolor=color)
+
+        # luz_Roja1 (P3)
+        color = "red" if i == 1 else "white"
+        etiqueta = "<br/>●" if i == 1 else " "
+        self.dot.node('P3', shape='circle', label=f'<<font point-size="20">luz_Roja1{etiqueta}</font>>', style='filled', fillcolor=color)
+
+        # espera1 (P4)
+        color = "blue" if i == 1 else "white"
+        etiqueta = "<br/>●" if i == 1 else " "
+        self.dot.node('P4', shape='circle', label=f'<<font point-size="20">espera1{etiqueta}</font>>', style='filled', fillcolor=color)
+
+        # luz_Verde2 (P5) - estática como en original
+        color = "green" if i == 0 else "white"
+        etiqueta = "<br/>●" if i == 0 else " "
+        self.dot.node('P5', shape='circle', label=f'<<font point-size="20">luz_Verde2{etiqueta}</font>>', style='filled', fillcolor=color)
+
+        # luz_Amarilla2 (P6)
+        color = "yellow" if i == 1 else "white"
+        etiqueta = "<br/>●" if i == 1 else " "
+        self.dot.node('P6', shape='circle', label=f'<<font point-size="20">luz_Amarilla2{etiqueta}</font>>', style='filled', fillcolor=color)
+
+        # luz_Roja2 (P7)
+        color = "red" if i == 2 or i == 3 else "white"
+        etiqueta = "<br/>●" if i == 3 else ("<br/>●" if i == 2 else " ")
+        self.dot.node('P7', shape='circle', label=f'<<font point-size="20">luz_Roja2{etiqueta}</font>>', style='filled', fillcolor=color)
+
+        # espera2 (P8)
+        color = "blue" if i == 3 else "white"
+        etiqueta = "<br/>●" if i == 3 else " "
+        self.dot.node('P8', shape='circle', label=f'<<font point-size="20">espera2{etiqueta}</font>>', style='filled', fillcolor=color)
+
+
+        # -------- Transiciones --------
+        # Definir colores para transiciones usadas
+        t1_color = "lightgray" if i == 3 else "white"  # T1 usada en estado 3
+        t2_color = "lightgray" if i == 0 else "white"  # T2 usada en estado 3
+        t3_color = "lightgray" if i == 2 else "white"  # T3 usada en estado 2
+        t4_color = "lightgray" if i == 1 else "white"  # T4 usada en estado 1
+        t5_color = "lightgray" if i == 2 else "white"  # T5 usada en estado 2
+        t6_color = "lightgray" if i == 0 else "white"  # T6 usada en estado 0
+
+        self.dot.node('T1', shape='box', label='T verde1 -> amarilla1, espera2', 
+                    style='filled', fillcolor=t1_color)
+        self.dot.node('T2', shape='box', label='T amarilla1 -> roja1', 
+                    style='filled', fillcolor=t2_color)
+        self.dot.node('T3', shape='box', label='T roja1 -> verde1', 
+                    style='filled', fillcolor=t3_color)
+        self.dot.node('T4', shape='box', label='T verde2 -> amarilla2, espera1', 
+                    style='filled', fillcolor=t4_color)
+        self.dot.node('T5', shape='box', label='T amarilla2 -> roja2', 
+                    style='filled', fillcolor=t5_color)
+        self.dot.node('T6', shape='box', label='T roja2 -> verde2', 
+                    style='filled', fillcolor=t6_color)
+
+        # -------- Arcos --------
+        self.dot.edge('P1', 'T1')
+        self.dot.edge('T1', 'P2')
+        self.dot.edge('T1', 'P8')
+
+        self.dot.edge('P2', 'T2')
+        self.dot.edge('T2', 'P3')
+        self.dot.edge('P3', 'T3')
+        self.dot.edge('P4', 'T3')
+        self.dot.edge('T3', 'P1')
+
+        self.dot.edge('P5', 'T4')
+        self.dot.edge('T4', 'P6')
+        self.dot.edge('T4', 'P4')
+
+        self.dot.edge('P6', 'T5')
+        self.dot.edge('T5', 'P7')
+        self.dot.edge('P7', 'T6')
+        self.dot.edge('P8', 'T6')
+        self.dot.edge('T6', 'P5')
+
 
     def generar_red_cadena(self):
         # Limpiar el grafo

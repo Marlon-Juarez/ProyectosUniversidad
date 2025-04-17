@@ -75,7 +75,7 @@ class VentanaCadena(QDialog):
             
             # Crear e inicializar el grafo
             self.red = grafo(texto)
-            self.red.generar("cadena")
+            self.red.generar("semaforo")
             
             # Cargar imagen inicial
             if not self.cargar_imagen():

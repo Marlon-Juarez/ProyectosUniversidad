@@ -2,7 +2,15 @@
   <qresource prefix="logo">
     <file>logo.jpg</file>
   </qresource>
-<qresource prefix="fondo">
+  <qresource prefix="prefijoNuevo">
+    <file>red_petri.png</file>
+  </qresource>
+  <qresource prefix="intercepcion">
+    <file>intercepcion.png</file>
+    <file>luzVerde.png</file>
+    <file>luzRoja.png</file>
+  </qresource>
+  <qresource prefix="fondo">
     <file>fondo.jpg</file>
   </qresource>
 </RCC>
